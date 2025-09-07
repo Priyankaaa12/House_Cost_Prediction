@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        .result { font-size: 24px; margin: 20px 0; color: #2e8b57; }
+        .inputs { margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <div class="result">Estimated Home Value: {{ price }}</div>
+    
+    <div class="inputs">
+        <h3>Your Inputs:</h3>
+        <ul>
+            <li><strong>Square Footage:</strong> {{ inputs['sqft'] }} sqft</li>
+            <li><strong>Bathrooms:</strong> {{ inputs['full_bath'] }} full, {{ inputs['half_bath'] }} half</li>
+            <li><strong>Quality:</strong> {{ inputs['quality'] }}/10</li>
+            <li><strong>Basement:</strong> {{ inputs['basement'] }} sqft</li>
+            <li><strong>Garage:</strong> {{ inputs['garage_cars'] }} cars</li>
+            <li><strong>Neighborhood:</strong> {{ inputs['neighborhood'] }}</li>
+            <li><strong>Year Built:</strong> {{ inputs['year_built'] }}</li>
+            <li><strong>Fireplaces:</strong> {{ inputs['fireplace'] }}</li>
+        </ul>
+    </div>
+    
+    <a href="/">← Make another prediction</a>
+</body>
+</html>

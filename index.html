@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Predictor</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; }
+        input, select { width: 100%; padding: 8px; box-sizing: border-box; }
+        button { background: #4CAF50; color: white; border: none; padding: 10px 15px; cursor: pointer; }
+        button:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+    <h1>House Price Prediction</h1>
+    <form action="/predict" method="post">
+        <div class="form-group">
+            <label>Square Footage:</label>
+            <input type="number" name="sqft" required min="500" max="10000" value="2000">
+        </div>
+        
+        <div class="form-group">
+            <label>Full Baths:</label>
+            <input type="number" name="full_bath" min="0" max="5" value="2">
+        </div>
+        
+        <div class="form-group">
+            <label>Half Baths:</label>
+            <input type="number" name="half_bath" min="0" max="5" value="1">
+        </div>
+        
+        <div class="form-group">
+            <label>Overall Quality (1-10):</label>
+            <input type="number" name="quality" min="1" max="10" value="7">
+        </div>
+        
+        <div class="form-group">
+            <label>Basement SQFT:</label>
+            <input type="number" name="basement" min="0" value="800">
+        </div>
+        
+        <div class="form-group">
+            <label>Garage Cars:</label>
+            <input type="number" name="garage_cars" min="0" max="5" value="2">
+        </div>
+        
+        <div class="form-group">
+            <label>Neighborhood:</label>
+            <select name="neighborhood">
+                <option value="NAmes">NAmes</option>
+                <option value="CollgCr">CollgCr</option>
+                <option value="NoRidge">NoRidge</option>
+                <option value="NridgHt">NridgHt</option>
+                <option value="StoneBr">StoneBr</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>Year Built:</label>
+            <input type="number" name="year_built" min="1800" max="2023" value="2005">
+        </div>
+        
+        <div class="form-group">
+            <label>Fireplaces:</label>
+            <input type="number" name="fireplace" min="0" max="3" value="1">
+        </div>
+        
+        <button type="submit">Predict Price</button>
+    </form>
+</body>
+</html>
